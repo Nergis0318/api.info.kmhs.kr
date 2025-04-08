@@ -1,8 +1,10 @@
-FROM python:alpine
+FROM ghcr.io/astral-sh/uv:alpine
+
+WORKDIR /app
 
 COPY . .
 
-RUN pip install poetry && poetry install
+RUN uv sync --frozen --no-cache
 
 EXPOSE 8000
-CMD poetry run fastapi run
+CMD ["uv", "run", "fastapi", "run"]
