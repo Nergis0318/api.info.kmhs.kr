@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN uv sync --frozen --no-cache
+RUN uv sync --frozen --no-cache && uv add --no-cache feedparser
 
 EXPOSE 8000
 CMD ["uv", "run", "fastapi", "run"]
