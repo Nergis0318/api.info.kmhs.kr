@@ -7,4 +7,5 @@ COPY . .
 RUN uv sync --frozen --no-cache
 
 EXPOSE 8000
-CMD ["uv", "run", "fastapi", "run"]
+
+ENTRYPOINT ["uv", "run", "hypercorn", "main:app", "--bind", "0.0.0.0:8000", "-w", "2"]
