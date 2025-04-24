@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 rss_url = "https://kmh-h.goeay.kr/kmh-h/na/ntt/selectRssFeed.do?mi=5589&bbsId=2405"
 date_now = dt.datetime.now()
-date_kor = f"1월7일"
+date_kor = "1월7일"
 rss_data = feedparser.parse(rss_url)["entries"]
 count = 0
 
